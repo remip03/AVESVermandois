@@ -1,0 +1,66 @@
+@startuml usecase
+
+!theme materia
+
+title = "Usecase du site AVES"
+
+left to right direction
+
+actor admin as a
+actor "gestionnaire Fruits et Legumes" as gfel
+actor "gestionnaire Financiers" as gf
+actor "gestionnaire Double" as gd
+actor utilisateur as u
+
+usecase seConnecter as co
+
+rectangle "site AVES - utilisateur" as rectu {
+
+    usecase naviguer as nav
+    usecase contacter as cont
+
+}
+
+rectangle "site AVES - fruits et légumes" as rectfel {
+
+    usecase "Ajouter Fruits et Légumes" as afel
+    usecase "Modifier Fruits et Légumes" as mfel
+    usecase "Supprimer Fruits et Légumes" as sfel
+
+}
+
+rectangle "site AVES - LOGO des finaciers" as rectlf {
+
+    usecase "Ajouter le logo d'un financier" as alf
+    usecase "Modifier le logo d'un financier" as mlf
+    usecase "Supprimer le logo d'un financier" as slf
+
+}
+
+rectangle "site AVES - Admin" as recta {
+
+    usecase "créer un compte" as ccompte
+    usecase "modifier un compte" as mcompte
+    usecase "supprimer un compte" as scompte
+
+}
+
+'  liens d'héritage
+gd <|- a
+gfel <|-- gd
+gf <|-- gd
+u <|-- gf
+u <|-- gfel
+
+'  attribution des usecase
+u -right-> rectu
+gfel -up-> rectfel
+gf -down-> rectlf
+a --> recta
+
+co ..> recta : extends
+co ..> rectfel : extends
+co ..> rectlf : extends
+
+
+@enduml

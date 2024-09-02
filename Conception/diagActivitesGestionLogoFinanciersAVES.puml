@@ -1,0 +1,95 @@
+@startuml "AVES - ajouter un financier"
+!theme amiga
+
+|#LightBlue|u| Gestionnaire Logo financier
+start
+|#SkyBlue|f| front
+|#RoyalBlue|b| back
+
+|u|
+:se rend sur la page "Gestion des financiers";
+:clique sur le bouton "ajouter un financier";
+|f|
+:affiche la page "ajoutFinancier";
+repeat
+repeat
+|u|
+:rempli les champs demandés;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de nouveau financier) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+:ajoute le nouveau financier à la base de données;
+|f|
+:Affiche le message "Le financier a bien été créé";
+
+end
+
+@enduml
+
+
+@startuml "AVES - modifié un financier"
+!theme amiga
+
+|#LightBlue|u| Gestionnaire Logo financier
+start
+|#SkyBlue|f| front
+|#RoyalBlue|b| back
+
+|u|
+:se rend sur la page "Nos financiers";
+:clique sur le bouton "modifier un financier";
+|f|
+:transmet la demande au serveur;
+|b|
+:importe les données liées au financier;
+|f|
+:affiche la page "modifierFinancier" avec les champs pré-remplis;
+repeat
+repeat
+|u|
+:modifie les champs de données;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de financier) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+:modifie les données du financier dans la base de données;
+|f|
+:Affiche le message "Ce financier a bien été modifié";
+
+end
+
+@enduml
+
+
+@startuml "AVES - supprimer un financier"
+!theme amiga
+
+|#LightBlue|u| Gestionnaire Logo financier
+start
+|#SkyBlue|f| front
+|#RoyalBlue|b| back
+
+|u|
+:se rend sur la page "Nos financiers";
+:clique sur le bouton "supprimer un financier";
+|f|
+:affiche le message "êtes-vous sur de vouloir supprimer ce financier ?";
+|u|
+if(choisi de cliquer sur :) is(oui) then
+|f|
+:transmet les données au server;
+|b|
+:efface les données du financier de la base de données;
+|f|
+:Affiche "financier supprimé";
+else(non)
+|f|
+:Affiche la page des financiers;
+endif
+
+end
+
+@enduml

@@ -1,0 +1,37 @@
+@startuml
+title "Diagramme de classe du site AVES"
+!theme spacelab
+
+Class u as "utilisateur" {
+
+    nom : string
+
+}
+
+Class c as "compte" {
+
+    nom : string
+    prénom : string
+    mail : string
+    mot de passe : string
+
+}
+
+Class fel as "Fruits et légumes" {
+
+    nom : string
+    variété : string
+    quantité : float
+    date de récolte : date
+
+}
+
+Class fin as "Financier"{
+
+    logo : img
+    lien : link
+
+}
+
+
+@enduml

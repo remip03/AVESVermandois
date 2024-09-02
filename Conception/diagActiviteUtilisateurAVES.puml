@@ -1,0 +1,84 @@
+@startuml "AVES - navigation utilisateur"
+!theme bluegray
+
+|#LightBlue|u| Utilisateur
+start
+|#Palegreen|f| front
+|#YellowGreen|b| back
+
+|u|
+:se rend sur le site;
+|f|
+:affiche la page d'accueil;
+|u|
+:navigue sur le site;
+|f|
+:affiche les pages selectionnées;
+end
+
+@enduml
+
+
+
+@startuml "AVES - formulaire de contact"
+!theme bluegray
+
+|#LightBlue|u| Utilisateur
+start
+|#Palegreen|f| front
+|#YellowGreen|b| back
+
+|u|
+:cherche à contacter l'AVES;
+:se rend sur la page contact;
+|f|
+:affiche la page contact;
+repeat
+repeat
+|u|
+:rempli le formulaire de contact;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+|f|
+:affiche la page "votre demande a bien été accepté";
+
+end
+
+@enduml
+
+
+
+@startuml "AVES - connexion"
+!theme bluegray
+
+|#LightBlue|u| Utilisateur
+start
+|#Palegreen|f| front
+|#YellowGreen|b| back
+
+|u|
+:se rend sur la page "connexion";
+|f|
+:affiche la page connexion;
+repeat
+repeat
+|u|
+:rempli les champs demandés;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de connexion) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+|f|
+fork
+:affiche la page d'accueil;
+fork again
+:débloque les fonctionnalités en fonction du rôle;
+end fork
+
+end
+
+@enduml

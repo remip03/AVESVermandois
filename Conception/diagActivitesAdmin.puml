@@ -1,0 +1,95 @@
+@startuml "AVES - créer un compte"
+!theme materia
+
+|#Gold|u| Admin
+start
+|#Orange|f| front
+|#OrangeRed|b| back
+
+|u|
+:se rend sur la page "Gestion des comptes";
+:clique sur le bouton "ajouter un compte";
+|f|
+:affiche la page "ajoutCompte";
+repeat
+repeat
+|u|
+:rempli les champs demandés;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de nouveau compte) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+:ajoute le nouveau compte à la base de données;
+|f|
+:Affiche le message "Le compte a bien été créé";
+
+end
+
+@enduml
+
+
+@startuml "AVES - modifié un compte"
+!theme materia
+
+|#Gold|u| Admin
+start
+|#Orange|f| front
+|#OrangeRed|b| back
+
+|u|
+:se rend sur la page "Gestion des comptes";
+:clique sur le bouton "modifier un compte";
+|f|
+:transmet la demande au serveur;
+|b|
+:importe les données liées au compte;
+|f|
+:affiche la page "modifiercompte" avec les champs pré-remplis;
+repeat
+repeat
+|u|
+:modifie les champs de données;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de compte) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+:modifie les données du compte dans la base de données;
+|f|
+:Affiche le message "Ce compte a bien été modifié";
+
+end
+
+@enduml
+
+
+@startuml "AVES - supprimer un compte"
+!theme materia
+
+|#Gold|u| Admin
+start
+|#Orange|f| front
+|#OrangeRed|b| back
+
+|u|
+:se rend sur la page "Gestion des comptes";
+:clique sur le bouton "supprimer un compte";
+|f|
+:affiche le message "êtes-vous sur de vouloir supprimer ce compte ?";
+|u|
+if(choisi de cliquer sur :) is(oui) then
+|f|
+:transmet les données au server;
+|b|
+:efface les données du compte de la base de données;
+|f|
+:Affiche "compte supprimé";
+else(non)
+|f|
+:Affiche la page des comptes;
+endif
+
+end
+
+@enduml
