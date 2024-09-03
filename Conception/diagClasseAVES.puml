@@ -1,17 +1,19 @@
 @startuml
 title "Diagramme de classe du site AVES"
-!theme spacelab
+!theme materia
 
-Class u as "utilisateur" {
 
-    nom : string
+Class a as "admin" {
+
+    droitsSupplémentaires :string
 
 }
 
-Class c as "compte" {
+Class g as "gestionnaire" {
 
     nom : string
-    prénom : string
+    prénom: : string
+    tel : int
     mail : string
     mot de passe : string
 
@@ -26,12 +28,36 @@ Class fel as "Fruits et légumes" {
 
 }
 
-Class fin as "Financier"{
+class pa as "Panier" {
 
-    logo : img
-    lien : link
+    nombre : int
+    date du panier : date
 
 }
+
+Class fin as "Financier"{
+
+    logo : string
+    lien : string
+
+}
+
+Class fo as "formulaire de contact" {
+
+    nom : string
+    prénom: : string
+    mail : string
+    tel : int
+    contenu : string
+
+}
+
+a "1" -- "n" fo : réceptionne
+fel "n" -- "n" pa : compose
+g "n" -left- "n" fel : organise
+g "n" -- "n" fin : gère
+
+a --|> g : hérite de
 
 
 @enduml
