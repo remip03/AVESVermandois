@@ -26,6 +26,9 @@ rectangle "site AVES - fruits et légumes" as rectfel {
     usecase "Ajouter Fruits et Légumes" as afel
     usecase "Modifier Fruits et Légumes" as mfel
     usecase "Supprimer Fruits et Légumes" as sfel
+    usecase "Ajouter un panier" as apa
+    usecase "Modifier un panier" as mpa
+    usecase "Supprimer un panier" as spa
 
 }
 

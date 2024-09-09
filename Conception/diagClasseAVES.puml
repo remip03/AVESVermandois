@@ -3,17 +3,11 @@ title "Diagramme de classe du site AVES"
 !theme materia
 
 
-Class a as "admin" {
-
-    droitsSupplémentaires :string
-
-}
-
 Class g as "gestionnaire" {
 
     nom : string
     prénom: : string
-    tel : int
+    role : string
     mail : string
     mot de passe : string
 
@@ -23,19 +17,18 @@ Class fel as "Fruits et légumes" {
 
     nom : string
     variété : string
-    quantité : float
-    date de récolte : date
+    recette : string
 
 }
 
 class pa as "Panier" {
 
-    nombre : int
-    date du panier : date
+    nom : string
+    prix : float
 
 }
 
-Class fin as "Financier"{
+Class fin as "Financeur"{
 
     logo : string
     lien : string
@@ -52,12 +45,12 @@ Class fo as "formulaire de contact" {
 
 }
 
-a "1" -- "n" fo : réceptionne
-fel "n" -- "n" pa : compose
-g "n" -left- "n" fel : organise
-g "n" -- "n" fin : gère
+g "1" -- "n" fo : réceptionne
+fel "n" -- "1" pa : compose
+g "1" -- "n" pa : créé
+g "1" -left- "n" fel : organise
+g "1" -- "n" fin : gère
 
-a --|> g : hérite de
 
 
 @enduml

@@ -93,3 +93,96 @@ endif
 end
 
 @enduml
+
+
+@startuml "AVES - ajouter un panier"
+!theme amiga
+
+|#LightBlue|u| Gestionnaire fruits et légumes
+start
+|#SkyBlue|f| front
+|#RoyalBlue|b| back
+
+|u|
+:se rend sur la page "Nos produits";
+:clique sur le bouton "ajouter un panier";
+|f|
+:affiche la page "ajoutPanier";
+repeat
+repeat
+|u|
+:rempli les champs demandés;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de nouveau panier) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+:ajoute le nouveau produit à la base de données;
+|f|
+:Affiche le message "Ce panier a bien été créé";
+
+end
+
+@enduml
+
+
+@startuml "AVES - modifier le panier"
+!theme amiga
+
+|#LightBlue|u| Gestionnaire fruits et légumes
+start
+|#SkyBlue|f| front
+|#RoyalBlue|b| back
+
+|u|
+:se rend sur la page "Nos produits";
+:clique sur le bouton "modifier le panier";
+|f|
+:affiche la page "modifier le panier" avec les champs pré-remplis;
+repeat
+repeat
+|u|
+:modifie les champs de données;
+|f|
+repeatwhile(les données sont conformes aux règles du formulaire de panier) is(non) not(oui)
+:transmet les informations au serveur;
+|b|
+repeatwhile(vérifie si les données sont conformes) is(non) not(oui)
+:modifie les données du panier dans la base de données;
+|f|
+:Affiche le message "Ce panier a bien été modifié";
+
+end
+
+@enduml
+
+
+@startuml "AVES - supprimer un panier"
+!theme amiga
+
+|#LightBlue|u| Gestionnaire fruits et légumes
+start
+|#SkyBlue|f| front
+|#RoyalBlue|b| back
+
+|u|
+:se rend sur la page "Nos produits";
+:clique sur le bouton "supprimer ce panier";
+|f|
+:affiche le message "êtes-vous sur de vouloir supprimer ce panier ?";
+|u|
+if(choisi de cliquer sur :) is(oui) then
+|f|
+:transmet les données au server;
+|b|
+:efface les données du produit de la base de données;
+|f|
+:Affiche "panier supprimé";
+else(non)
+|f|
+:Affiche la page des produits;
+endif
+
+end
+
+@enduml
