@@ -1,0 +1,47 @@
+.navbar{
+    width: 100%;
+    height: auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+
+.accueil{
+    grid-template-columns: 1;
+}
+
+.navLinks{
+    grid-template-columns: 2;
+    width: 100%;
+}
+
+.logo{
+    width: 6rem;
+    height: auto;
+}
+
+.iconburger{
+    width: 6rem;
+    height: auto;
+}
+
+.dropdown{
+    list-style-type: none;
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    z-index: 1;
+    top: 100%;
+}
+
+.burger{
+    display: none;
+}
+
+.navLink{
+text-decoration: none;
+font-size: large;
+color: black;
+}

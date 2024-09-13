@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+
+  /* classes de positionnement */
+.ligne{
+    display: flex;
+    flex-direction: row;
+}
+
+.colonne{
+    display: flex;
+    flex-direction: column;
+}
+
+.espace{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ecarte{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.licard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+  /* classes de couleurs */
+.orange{
+    color: black;
+    background-color: #f39e26;
+}
+
+.vert{
+    color: black;
+    background-color: #a6c33b;
+}
+
+.bleu{
+    color: black;
+    background-color: #009fb2;
+}

@@ -1,19 +1,29 @@
-<nav class="navbar">
-    <div class="navbarMenu">
-        <a routerLink="Accueil">
-            <img src="/images/commons/logoAVES.png" alt="logoaves">
+<nav class="navbar orange">
+    <div class="ligne navbar">
+        <a routerLink="Accueil" class="accueil">
+            <img src="/images/commons/logoAVES.png" alt="logoaves" class="logo">
         </a>
-        <img src="/images/commons/menu-burger.png" alt="menu">
-        <div class="navLinks">
-            <p>Association intermédiaire</p>
+        <img src="/images/commons/menu-burger.png" alt="menu" class="iconburger burger">
+        <div class="navLinks espace">
+            <a class="navLink" routerLink="AI">Association intermédiaire</a>
             <a class="navLink" (click)="toggleACIDropDown()">
                 Atelier Chantier d'insertion
+                <ul *ngIf="dropDownACI" class="dropdown">
+                    <li>Les créations d'Henri</li>
+                    <li>Savoir Fer</li>
+                </ul>
             </a>
-            <a>Plateforme Mobilité</a>
-            <a>En Terre Connectée</a>
-            <a>Nos services</a>
-            <a>Nous contacter</a>
-            <a>A propos de nous</a>
+            <a class="navLink" routerLink="PFM">Plateforme Mobilité</a>
+            <a class="navLink" routerLink="ETC">En Terre Connectée</a>
+            <a class="navLink" (click)=" toggleServicesDropDown()">
+                Nos services
+                <ul *ngIf="dropDownServices" class="dropdown">
+                    <li routerLink="FeL">Nos fruits et légumes</li>
+                    <li>Travaux</li>
+                </ul>
+            </a>
+            <a class="navLink" routerLink="formulaireContact">Nous contacter</a>
+            <a class="navLink" routerLink="aPropos">A propos de nous</a>
         </div>
     </div>
 </nav>
