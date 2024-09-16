@@ -1,29 +1,49 @@
-<nav class="navbar orange">
-    <div class="ligne navbar">
-        <a routerLink="Accueil" class="accueil">
+
+  <!-- navbar importée de bootstrap -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">   
+    <div class="container-fluid orange bascolo">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a routerLink="Accueil">
             <img src="/images/commons/logoAVES.png" alt="logoaves" class="logo">
         </a>
-        <img src="/images/commons/menu-burger.png" alt="menu" class="iconburger burger">
-        <div class="navLinks espace">
-            <a class="navLink" routerLink="AI">Association intermédiaire</a>
-            <a class="navLink" (click)="toggleACIDropDown()">
-                Atelier Chantier d'insertion
-                <ul *ngIf="dropDownACI" class="dropdown">
-                    <li>Les créations d'Henri</li>
-                    <li>Savoir Fer</li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="AI">Association intermédiaire</a>
+            </li>
+            <li class="nav-item dropdown bascolo">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Atelier Chantier d'insertion
+                </a>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="creationHenri">Les créations d'Henri</a></li>
+                <li><a class="dropdown-item" routerLink="savoirFer">Savoir Fer</a></li>
                 </ul>
-            </a>
-            <a class="navLink" routerLink="PFM">Plateforme Mobilité</a>
-            <a class="navLink" routerLink="ETC">En Terre Connectée</a>
-            <a class="navLink" (click)=" toggleServicesDropDown()">
-                Nos services
-                <ul *ngIf="dropDownServices" class="dropdown">
-                    <li routerLink="FeL">Nos fruits et légumes</li>
-                    <li>Travaux</li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="PFM">Plateforme Mobilité</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="ETC">En Terre Connectée</a>
+            </li>
+            <li class="nav-item dropdown bascolo">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Nos services
+                </a>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="FeL">Nos fruits et légumes</a></li>
+                <li><a class="dropdown-item" href="#">Autres services</a></li>
                 </ul>
-            </a>
-            <a class="navLink" routerLink="formulaireContact">Nous contacter</a>
-            <a class="navLink" routerLink="aPropos">A propos de nous</a>
-        </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="formulaireContact">Nous contacter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="aPropos">A propos de nous</a>
+            </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>

@@ -5,10 +5,12 @@ import { FormulaireContactComponent } from './pages/formulaire-contact/formulair
 import { MentionsLegalesComponent } from './pages/mentions-legales/mentions-legales.component';
 import { FeLComponent } from './pages/fe-l/fe-l.component';
 import { AssociationIntermediaireComponent } from './pages/association-intermediaire/association-intermediaire.component';
-import { AteliersChantiersInsertionComponent } from './pages/ateliers-chantiers-insertion/ateliers-chantiers-insertion.component';
 import { PlateformeMobiliteComponent } from './pages/plateforme-mobilite/plateforme-mobilite.component';
 import { EnTerreConnecteeComponent } from './pages/en-terre-connectee/en-terre-connectee.component';
 import { AProposDeNousComponent } from './pages/a-propos-de-nous/a-propos-de-nous.component';
+import { CreationDHenriComponent } from './pages/creation-dhenri/creation-dhenri.component';
+import { SavoirFerComponent } from './pages/savoir-fer/savoir-fer.component';
+import { ConnexionComponent } from './pages/connexion/connexion.component';
 
 export const routes: Routes = [
 
@@ -19,8 +21,9 @@ export const routes: Routes = [
       //page association intermédiaire
     { path: 'AI', component: AssociationIntermediaireComponent },
 
-      //page atelier chantier d'insertion
-    { path: 'ACI', component: AteliersChantiersInsertionComponent },
+      //pages atelier chantier d'insertion
+    { path: 'creationHenri', component: CreationDHenriComponent },
+    { path: 'savoirFer', component: SavoirFerComponent },
 
       //page pateforme mobilité
     { path: 'PFM', component: PlateformeMobiliteComponent },
@@ -40,7 +43,11 @@ export const routes: Routes = [
       //page Mentions légales
     { path: 'mentionsLegales', component: MentionsLegalesComponent },
 
+      //page connexion
+    { path: 'connexion', component: ConnexionComponent },
+
       //route si la page n'existe pas ou  plus.
+      // Attention, cette ligne doit rester à la fin du code.
     { path: '**', component: NotFoundComponent },
 
 ];

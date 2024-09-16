@@ -10,6 +10,12 @@
     flex-direction: column;
 }
 
+.centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .espace{
     display: flex;
     justify-content: space-around;
@@ -42,4 +48,13 @@
 .bleu{
     color: black;
     background-color: #009fb2;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
