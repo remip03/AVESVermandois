@@ -16,3 +16,7 @@ ul{
     display: flex;
     align-items: end;
 }
+
+.couleurHeader{
+    background: #f4cb53;
+}

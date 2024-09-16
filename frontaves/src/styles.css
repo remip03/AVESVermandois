@@ -50,6 +50,10 @@
     background-color: #009fb2;
 }
 
+.degrade{
+    background: linear-gradient(#009fb2, #a6c33b, #f39e26);
+}
+
 footer{
     position: absolute;
     width: 100%;

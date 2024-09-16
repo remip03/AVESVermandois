@@ -1,0 +1,12 @@
+<section>
+<h2>Liste des formulaires de contact</h2>
+
+<div>
+    <div *ngFor="let FC of formulaireContacts; let i = index">
+        <span>Nom : {{ FC.nomFC }}</span>
+        <span>Prénom : {{ FC.prenomFC }}</span>
+        <span>Envoyé le : {{ FC.dateFC }}</span>
+    </div>
+</div>
+
+</section>

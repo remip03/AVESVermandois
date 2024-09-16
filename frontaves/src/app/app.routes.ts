@@ -11,6 +11,7 @@ import { AProposDeNousComponent } from './pages/a-propos-de-nous/a-propos-de-nou
 import { CreationDHenriComponent } from './pages/creation-dhenri/creation-dhenri.component';
 import { SavoirFerComponent } from './pages/savoir-fer/savoir-fer.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
+import { ListeFCComponent } from './pages/formulaire-contact/liste-fc/liste-fc.component';
 
 export const routes: Routes = [
 
@@ -34,8 +35,9 @@ export const routes: Routes = [
       //page a propos de nous
     { path: 'aPropos', component: AProposDeNousComponent },
 
-      //formulaire de contact
+      //pages formulaire de contact
     { path: 'formulaireContact', component: FormulaireContactComponent },
+    { path: 'listeFC', component: ListeFCComponent },
 
       //page fruit et legumes
     { path: 'FeL', component: FeLComponent },
