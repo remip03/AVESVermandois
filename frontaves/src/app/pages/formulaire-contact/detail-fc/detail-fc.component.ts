@@ -14,7 +14,7 @@ import formulaireContact from '../../../models/formulaireContact';
 })
 export class DetailFcComponent implements OnInit {
 
-  detailFC: FormGroup;
+  detailFC!: formulaireContact;
   fcId!: number;
 
   constructor(
@@ -23,14 +23,14 @@ export class DetailFcComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-    this.detailFC = this.fb.group({
-      nom_fc: [''],
-      prenom_fc: [''],
-      tel_fc: [''],
-      mail_fc: [''],
-      content_fc: [''],
-      date_fc: ['']
-    })
+    // this.detailFC = this.fb.group({
+    //   nom_fc: [''],
+    //   prenom_fc: [''],
+    //   tel_fc: [''],
+    //   mail_fc: [''],
+    //   content_fc: [''],
+    //   date_fc: ['']
+    // })
   }
 
   deleteFC() {
@@ -48,7 +48,7 @@ export class DetailFcComponent implements OnInit {
   ngOnInit(): void {
     this.fcId = Number(this.route.snapshot.paramMap.get('id'));
     if (this.fcId){
-      this.fcService.getformulaireContact(this.fcId).subscribe((data: formulaireContact) => this.detailFC.patchValue(data));
+      this.fcService.getformulaireContact(this.fcId).subscribe((data: formulaireContact) => this.detailFC = data);
     }
   }
 
