@@ -23,12 +23,12 @@ export class FormulaireContactComponent {
     private router: Router
   ){
     this.FormulaireContact = this.formbuild.group({
-      nomFC: ['', Validators.required],
-      prenomFC: ['', Validators.required],
-      telFC: ['', Validators.required],
-      mailFC: ['', Validators.required],
-      contentFC: ['', Validators.required],
-      dateFC: ['', Validators.required]
+      nom_fc: ['', Validators.required],
+      prenom_fc: ['', Validators.required],
+      tel_fc: ['', Validators.required],
+      mail_fc: ['', Validators.required],
+      content_fc: ['', Validators.required],
+      date_fc: ['', Validators.required]
     })
   }
 
@@ -40,7 +40,7 @@ export class FormulaireContactComponent {
     }
 
     const FCvalid: formulaireContact = this.FormulaireContact.value;
-    FCvalid.dateFC = dateFormulaire;
+    FCvalid.date_fc = dateFormulaire;
     console.log(dateFormulaire);
     console.log(FCvalid);
     

@@ -12,6 +12,7 @@ import { CreationDHenriComponent } from './pages/creation-dhenri/creation-dhenri
 import { SavoirFerComponent } from './pages/savoir-fer/savoir-fer.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { ListeFCComponent } from './pages/formulaire-contact/liste-fc/liste-fc.component';
+import { DetailFcComponent } from './pages/formulaire-contact/detail-fc/detail-fc.component';
 
 export const routes: Routes = [
 
@@ -38,6 +39,7 @@ export const routes: Routes = [
       //pages formulaire de contact
     { path: 'formulaireContact', component: FormulaireContactComponent },
     { path: 'listeFC', component: ListeFCComponent },
+    { path: 'listeFC/:id', component: DetailFcComponent },
 
       //page fruit et legumes
     { path: 'FeL', component: FeLComponent },

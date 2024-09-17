@@ -1,9 +1,9 @@
 export default interface formulaireContact {
     id: number;
-    nomFC: string;
-    prenomFC: string;
-    telFC: string;
-    mailFC: string;
-    contentFC: string;
-    dateFC: Date;
+    nom_fc: string;
+    prenom_fc: string;
+    tel_fc: string;
+    mail_fc: string;
+    content_fc: string;
+    date_fc: Date;
 }
