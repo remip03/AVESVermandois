@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { FormulaireContactService } from '../../../services/formulaire-contact.service';
 import formulaireContact from '../../../models/formulaireContact';
@@ -8,7 +8,7 @@ import formulaireContact from '../../../models/formulaireContact';
 @Component({
   selector: 'app-detail-fc',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './detail-fc.component.html',
   styleUrl: './detail-fc.component.css'
 })
@@ -18,20 +18,10 @@ export class DetailFcComponent implements OnInit {
   fcId!: number;
 
   constructor(
-    private fb: FormBuilder,
     private fcService: FormulaireContactService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-    // this.detailFC = this.fb.group({
-    //   nom_fc: [''],
-    //   prenom_fc: [''],
-    //   tel_fc: [''],
-    //   mail_fc: [''],
-    //   content_fc: [''],
-    //   date_fc: ['']
-    // })
-  }
+  ) {  }
 
   deleteFC() {
     this.fcService.deleteformulaireContact(this.fcId).subscribe({

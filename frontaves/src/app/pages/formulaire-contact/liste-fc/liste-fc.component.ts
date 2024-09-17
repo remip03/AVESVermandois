@@ -21,8 +21,7 @@ export class ListeFCComponent implements OnInit {
 
   ngOnInit(): void {
     this.fCService.getformulaireContacts().subscribe((res) => {
-      this.formulaireContacts = res; 
-      console.log(this.formulaireContacts);
+      this.formulaireContacts = res;
     })
     
   }

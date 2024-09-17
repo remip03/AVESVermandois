@@ -13,6 +13,9 @@ import { SavoirFerComponent } from './pages/savoir-fer/savoir-fer.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { ListeFCComponent } from './pages/formulaire-contact/liste-fc/liste-fc.component';
 import { DetailFcComponent } from './pages/formulaire-contact/detail-fc/detail-fc.component';
+import { ListeCompteComponent } from './pages/panelAdmin/liste-compte/liste-compte.component';
+import { UpdateCompteComponent } from './pages/panelAdmin/update-compte/update-compte.component';
+import { CreateCompteComponent } from './pages/panelAdmin/create-compte/create-compte.component';
 
 export const routes: Routes = [
 
@@ -46,6 +49,11 @@ export const routes: Routes = [
 
       //page Mentions légales
     { path: 'mentionsLegales', component: MentionsLegalesComponent },
+
+      //pages du panel admin
+    { path: 'listecompte', component: ListeCompteComponent },
+    { path: 'listecompte/:id', component: UpdateCompteComponent },
+    { path: 'creercompte', component: CreateCompteComponent },
 
       //page connexion
     { path: 'connexion', component: ConnexionComponent },

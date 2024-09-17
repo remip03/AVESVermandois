@@ -1,5 +1,5 @@
 
-<div>
+<div class="colonne centre">
 
     <p>Envoyé le : {{ detailFC.date_fc }}</p>
     <p>Par : {{ detailFC.nom_fc }} {{ detailFC.prenom_fc }}</p>
@@ -7,5 +7,6 @@
     <p>Mail : {{ detailFC.mail_fc }}</p>
     <p>Message : </p>
     <p>{{ detailFC.content_fc }}</p>
+    <button (click)="deleteFC()">Supprimer</button>
 
 </div>

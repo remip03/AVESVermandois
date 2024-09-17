@@ -1,0 +1,15 @@
+<section>
+
+    <div class="centre">
+        <h2>Liste des comptes</h2>
+    </div>
+
+    <div class="licarte">
+        <div *ngFor="let user of listeUser" class="carte colonne centre dimresp">
+            <span>Nom : {{ user.nomG }}</span>
+            <span>Prénom : {{ user.prenomG }}</span>
+            <button routerLink="listecompte/{{ user.id }}">Detail</button>
+        </div>
+    </div>
+
+</section>
