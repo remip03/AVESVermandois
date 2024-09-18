@@ -3,6 +3,6 @@ export default interface user {
     email: string;
     roles: string;
     password: string;
-    nomG: string;
-    prenomG: string;
+    nom_g: string;
+    prenom_g: string;
 }

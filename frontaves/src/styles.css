@@ -54,6 +54,7 @@
     background: linear-gradient(#009fb2, #a6c33b, #f39e26);
 }
 
+  /* réglages footer */
 footer{
     position: absolute;
     width: 100%;
@@ -61,4 +62,21 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+body{
+    position: relative;
+    min-height: 100%;
+}
+
+  /* style de base des boutons */
+button{
+    width: 30%;
+    height: 2rem;
+    font-size: 1.2rem;
+    background-color: #009fb2;
+    color: white;
+    border-radius: 1rem;
+    border: solid 1px black;
+    margin: 1%;
 }

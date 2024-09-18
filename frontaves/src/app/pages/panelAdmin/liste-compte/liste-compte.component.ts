@@ -20,7 +20,7 @@ export class ListeCompteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userService.getusers().subscribe((res) => {
+    this.userService.getUsers().subscribe((res) => {
       this.listeUser = res;
     })
   }
