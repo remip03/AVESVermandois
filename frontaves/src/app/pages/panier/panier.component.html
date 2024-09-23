@@ -1,1 +1,19 @@
-<p>panier works!</p>
+<section>
+
+    <div class="centre">
+        <h2>Liste des paniers.</h2>
+    </div>
+
+    <div>
+        <button routerLink="/creerPanier">Nouveau panier</button>
+    </div>
+
+    <div>
+        <div *ngFor="let panier of listePaniers">
+            <span>nom : {{ panier.nomPa }}</span>
+            <span>prix : {{ panier.prixPa }}</span>
+            <button routerLink="/paniers/{{ panier.id }}">Modifier</button>
+        </div>
+    </div>
+
+</section>

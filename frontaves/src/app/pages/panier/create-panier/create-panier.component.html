@@ -1,0 +1,26 @@
+<section class="colonne centre">
+
+    <button routerLink="/paniers">Retour à la liste</button>
+    <h2>Nouveau panier.</h2>
+
+    <form [formGroup]="newPanier" (ngSubmit)="createPanier()" class="container colonne centre">
+
+        <div class="colonne marge">
+            <label for="nomPa">Entrer le nom du panier :</label>
+            <input id="nomPa" name="nomPa" type="text" size="50" placeholder="NOM" formControlName="nomPa">
+            @if (valid && form['nomPa'].invalid) {
+                <span>Nom invalide</span>
+                }
+        </div>
+
+        <div class="colonne marge">
+            <label for="prixPa">Entrer le nom du panier :</label>
+            <input id="prixPa" name="prixPa" type="text" size="50" placeholder="PRIX" formControlName="prixPa">
+            @if (valid && form['prixPa'].invalid) {
+                <span>Nom invalide</span>
+                }
+        </div>
+
+    </form>
+
+</section>

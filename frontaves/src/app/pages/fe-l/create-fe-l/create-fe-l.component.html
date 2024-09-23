@@ -1,0 +1,28 @@
+<section class="colonne centre">
+
+    <button routerLink="/FeL">Retour à la liste</button>
+    <h2>Nouveau fruit ou légume.</h2>
+
+<form [formGroup]="newfel" (ngSubmit)="createFeL()" class="container colonne centre">
+
+    <div class="colonne marge">
+        <label for="nomFeL">Entrer le nom du produit :</label>
+        <input id="nomFeL" name="nomFeL" type="text" size="50" placeholder="NOM" formControlName="nomFeL">
+        @if (valid && form['nomFeL'].invalid) {
+            <span>Nom invalide</span>
+            }
+    </div>
+
+    <div class="colonne marge">
+        <label for="varieteFeL">Entrer la variété :</label>
+        <input id="varieteFeL" name="varieteFeL" type="text" size="50" placeholder="VARIETE" formControlName="varieteFeL">
+        @if (valid && form['varieteFeL'].invalid) {
+            <span>Variété invalide</span>
+            }
+    </div>
+
+    <button type="submit">Créer ce produit</button>
+
+</form>
+
+</section>

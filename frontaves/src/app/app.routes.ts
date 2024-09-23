@@ -16,6 +16,11 @@ import { DetailFcComponent } from './pages/formulaire-contact/detail-fc/detail-f
 import { ListeCompteComponent } from './pages/panelAdmin/liste-compte/liste-compte.component';
 import { UpdateCompteComponent } from './pages/panelAdmin/update-compte/update-compte.component';
 import { CreateCompteComponent } from './pages/panelAdmin/create-compte/create-compte.component';
+import { UpdateFeLComponent } from './pages/fe-l/update-fe-l/update-fe-l.component';
+import { CreateFeLComponent } from './pages/fe-l/create-fe-l/create-fe-l.component';
+import { PanierComponent } from './pages/panier/panier.component';
+import { UpdatePanierComponent } from './pages/panier/update-panier/update-panier.component';
+import { CreatePanierComponent } from './pages/panier/create-panier/create-panier.component';
 
 export const routes: Routes = [
 
@@ -44,8 +49,15 @@ export const routes: Routes = [
     { path: 'listeFC', component: ListeFCComponent },
     { path: 'listeFC/:id', component: DetailFcComponent },
 
-      //page fruit et legumes
+      //pages fruit et legumes
     { path: 'FeL', component: FeLComponent },
+    { path: 'FeL/:id', component: UpdateFeLComponent },
+    { path: 'creerFeL', component: CreateFeLComponent },
+
+      //pages paniers
+    { path: 'paniers', component: PanierComponent },
+    { path: 'paniers/:id', component: UpdatePanierComponent },
+    { path: 'creerPanier', component: CreatePanierComponent },
 
       //page Mentions légales
     { path: 'mentionsLegales', component: MentionsLegalesComponent },

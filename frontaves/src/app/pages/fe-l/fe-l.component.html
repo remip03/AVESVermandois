@@ -1,1 +1,23 @@
-<p>fe-l works!</p>
+<section>
+
+    <div class="centre">
+        <h2>Liste des fruits et légumes.</h2>
+    </div>
+
+    <div>
+        <button routerLink="/creerFeL">Nouveau fruit ou légumes</button>
+    </div>
+
+    <div class="licarte">
+        <div *ngFor="let fel of listeFeLs" class="carte colonne centre dimresp">
+            <span>Nom : {{ fel.nomFeL }}</span>
+            <span>Variété : {{ fel.varieteFeL }}</span>
+            <div class="ligne centre">
+                <input type="checkbox" id="Afficher" name="Afficher" checked (click)="afficherFeL(fel.visibleFeL)">
+                <label for="Afficher">Afficher</label>
+            </div>
+            <button routerLink="/FeL/{{ fel.id }}">Modifier</button>
+        </div>
+    </div>
+
+</section>

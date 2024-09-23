@@ -1,0 +1,17 @@
+<section class="centre colonne">
+
+    <button routerLink="/paniers">Retour à la liste</button>
+
+    <div class="colonne centre marge formResp" [formGroup]="detailPanier" (ngSubmit)="updatePanier()">
+        <div class="colonne marge divInput">
+            <label for="nomPa">Nom du fruit ou du légumes : </label>
+            <input type="text" name="nomPa" id="nomPa" formGroupName="nomPa" value="{{detailPanier.value.nomPa}}">
+        </div>
+        <div class="colonne marge divInput">
+            <label for="prixPa">Entrer le prénom : </label>
+            <input type="text" name="prixPa" id="prixPa" formGroupName="prixPa" value="{{detailPanier.value.prixPa}}">
+        </div>
+
+    </div>
+
+</section>
