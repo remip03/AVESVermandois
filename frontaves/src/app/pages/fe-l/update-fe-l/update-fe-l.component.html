@@ -1,0 +1,26 @@
+<section class="centre colonne">
+
+    <button routerLink="/FeL">Retour à la liste</button>
+
+    <div class="colonne centre marge formResp" [formGroup]="detailFeL" (ngSubmit)="updateFeL()">
+
+        <div class="colonne marge divInput">
+            <label for="nom">Nom du fruit ou du légumes : </label>
+            <input type="text" name="nom" id="nom" formGroupName="nomFeL" value="{{detailFeL.value.nomFeL}}">
+        </div>
+        <div class="colonne marge divInput">
+            <label for="variete">Entrer le prénom : </label>
+            <input type="text" name="variete" id="variete" formGroupName="varieteFeL" value="{{detailFeL.value.varieteFeL}}">
+        </div>
+        <div class="ligne centre">
+            <input type="checkbox" id="Afficher" name="Afficher" formGroupName="visibleFeL" checked (click)="afficherFeL(detailFeL.value.visibleFeL)">
+            <label for="Afficher">Afficher</label>
+        </div>
+
+        <button type="submit">Modifier ce produit</button>
+
+    </div>
+
+    <button (click)="deleteFeL()">Supprimer ce produit</button>
+
+</section>

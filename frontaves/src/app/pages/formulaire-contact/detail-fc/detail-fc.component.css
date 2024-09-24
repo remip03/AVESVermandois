@@ -1,0 +1,17 @@
+button{
+    width: 20%;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+.marge{
+    margin: 2%;
+}
+
+.bulleMessage{
+    width: 60%;
+    height: auto;
+    border: solid 1px #009fb2;
+    border-radius: 1rem;
+}
+

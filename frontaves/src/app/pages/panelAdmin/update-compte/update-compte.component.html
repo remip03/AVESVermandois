@@ -1,0 +1,39 @@
+<section class="centre colonne">
+
+    <button routerLink="/listecompte">Retour à la liste</button>
+
+    <div class="colonne centre marge formResp" [formGroup]="detailUser" (ngSubmit)="updateUser()">
+
+        <div class="colonne marge divInput">
+            <label for="nom">Entrer le nom : </label>
+            <input type="text" name="nom" id="nom" formGroupName="nom_g" value="{{detailUser.value.nom_g}}">
+        </div>
+        <div class="colonne marge divInput">
+            <label for="prenom">Entrer le prénom : </label>
+            <input type="text" name="prenom" id="prenom" formGroupName="prenom_g" value="{{detailUser.value.prenom_g}}">
+        </div>
+        <div class="colonne marge divInput">
+            <label for="email">Entrer l'adresse mail : </label>
+            <input type="text" name="email" id="email" formGroupName="email" value="{{detailUser.value.email}}">
+        </div>
+        <div class="colonne marge divInput">
+            <label for="password">Nouveau mot de passe : </label>
+            <input type="password" name="password" id="password" formGroupName="password">
+        </div>
+        <div class="colonne marge divInput">
+            <label for="roles">Choisir le role à attribuer à ce compte</label>
+            <select name="roles" id="roles" formControlName="roles">
+                <option value="" disabled selected>selectionner le role</option>
+                @for (item of listeRoles; track $index) {
+                <option [value]="item">{{ item }}</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit">Modifier ce compte</button>
+
+    </div>
+
+    <button (click)="deleteUser()">Supprimer ce compte</button>
+
+</section>

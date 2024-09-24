@@ -1,1 +1,39 @@
-<p>formulaire-contact works!</p>
+<section class="colonne centre">
+
+    <h2>Nous contacter</h2>
+
+<form [formGroup]="FormulaireContact" (ngSubmit)="envoiFormulaire()" class="container colonne centre">
+
+    <div class="colonne marge">
+        <label for="nom_fc">Entrer votre nom :</label>
+        <input id="nom_fc" name="nom_fc" type="text" size="50" placeholder="NOM" formControlName="nom_fc">
+        @if (valid && form['nom_fc'].invalid) {
+            <span>Nom invalide</span>
+            }
+    </div>
+
+    <div class="colonne marge">
+        <label for="prenom_fc">Entrer votre prénom :</label>
+        <input id="prenom_fc" name="prenom_fc" type="text" size="50" placeholder="PRENOM" formControlName="prenom_fc">
+    </div>
+
+    <div class="colonne marge">
+        <label for="tel_fc">Entrer votre numéro de téléphone :</label>
+        <input id="tel_fc" name="tel_fc" type="text" size="50" placeholder="Téléphone" formControlName="tel_fc">
+    </div>
+
+    <div class="colonne marge">
+        <label for="mail_fc">Entrer votre adresse mail :</label>
+        <input id="mail_fc" name="mail_fc" type="text" size="50" placeholder="Adresse Mail" formControlName="mail_fc">
+    </div>
+
+    <div class="colonne marge divForm">
+        <label for="content_fc">Entrer votre message (500 caractères maximum) :</label>
+        <textarea name="content_fc" id="content_fc" maxlength="500" formControlName="content_fc"></textarea>
+    </div>
+
+    <button type="submit">Envoyer</button>
+
+</form>
+
+</section>
