@@ -15,7 +15,7 @@ export class CreateCompteComponent {
 
   valid: boolean = false;
   newUser: FormGroup;
-  listeRoles = ['ROLE_ADMIN', 'ROLE_FEL', 'ROLE_FINANCEUR', 'ROLE_DOUBLE', 'ROLE_FORMULAIRECONTACT'];
+  listeRoles = [['ROLE_ADMIN'], ['ROLE_FEL'], ['ROLE_FINANCEUR'], ['ROLE_DOUBLE'], ['ROLE_FORMULAIRECONTACT']];
 
   constructor(
     private userService: UserService,
@@ -23,11 +23,11 @@ export class CreateCompteComponent {
     private router: Router
   ) {
     this.newUser = this.fb.group({
+      email: ['', Validators.required],
+      roles: [['ROLE_USER'], Validators.required],
+      password: ['', Validators.required],
       nom_g: ['', Validators.required],
       prenom_g: ['', Validators.required],
-      email: ['', Validators.required],
-      roles: ['', Validators.required],
-      password: ['', Validators.required]
     })
   }
 

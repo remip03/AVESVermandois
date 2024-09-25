@@ -55,8 +55,8 @@
 }
 
   /* réglages footer */
-footer{
-    position: absolute;
+.footer{
+    position: relative;
     width: 100%;
     height: auto;
     bottom: 0;
