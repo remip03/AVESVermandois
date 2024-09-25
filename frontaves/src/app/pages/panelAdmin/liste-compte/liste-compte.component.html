@@ -4,6 +4,8 @@
         <h2>Liste des comptes</h2>
     </div>
 
+    <button routerLink="/creercompte">Créer un compte</button>
+
     <div class="licarte">
         <div *ngFor="let user of listeUser" class="carte colonne centre dimresp">
             <span>Nom : {{ user.nom_g }}</span>

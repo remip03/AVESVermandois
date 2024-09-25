@@ -2,16 +2,24 @@
 
     <button routerLink="/paniers">Retour à la liste</button>
 
-    <div class="colonne centre marge formResp" [formGroup]="detailPanier" (ngSubmit)="updatePanier()">
+<form [formGroup]="detailPanier" (ngSubmit)="updatePanier()">
+    <div class="colonne centre marge formResp">
         <div class="colonne marge divInput">
-            <label for="nomPa">Nom du fruit ou du légumes : </label>
+            <label for="nomPa">Nom du panier : </label>
             <input type="text" name="nomPa" id="nomPa" formGroupName="nomPa" value="{{detailPanier.value.nomPa}}">
         </div>
         <div class="colonne marge divInput">
-            <label for="prixPa">Entrer le prénom : </label>
+            <label for="prixPa">Entrer le prix : </label>
             <input type="text" name="prixPa" id="prixPa" formGroupName="prixPa" value="{{detailPanier.value.prixPa}}">
         </div>
+        <div>
+            @for (feL of detailPanier.value.FeLs; track $index) {
+
+            }
+        </div>
+
 
     </div>
+</form>
 
 </section>

@@ -1,1 +1,36 @@
-<p>create-financeur works!</p>
+<section>
+
+    <button routerLink="/financeurs">Retour à la liste</button>
+    <div class="centre">
+        <h2>Nouveau finannceur.</h2>
+    </div>
+
+    <form [formGroup]="newFinanceur" (ngSubmit)="createFinanceur()">
+
+        <div class="colonne centre">
+            <label for="logoF">Image du logo (format acceptée : jpg ou png)</label>
+            <input type="file" id="logoF" name="logoF" accept=".jpg,.png" (input)="onFileChange($event)"/>
+        </div>
+
+        <div class="colonne centre">
+            <label for="linkF">Lien du site du financeur (facultatif)</label>
+            <input type="text" id="linkF" name="linkF" placeholder="Copier le lien ici" formControlName="linkF">
+        </div>
+
+        <div class="colonne centre">
+            <label for="pageF">Choisir la page sur laquelle sera affichée ce financeur</label>
+            <select name="pageF" id="pageF" formControlName="pageF">
+                <option value="" disabled selected>choisir la page</option>
+                @for (item of pageSelect; track $index) {
+                    <option [value]="item"></option>
+                }
+            </select>
+        </div>
+
+        <div class="colonne centre">
+            <button type="submit">Créer ce financeur</button>
+        </div>
+
+    </form>
+
+</section>

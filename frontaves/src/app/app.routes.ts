@@ -21,6 +21,8 @@ import { CreateFeLComponent } from './pages/fe-l/create-fe-l/create-fe-l.compone
 import { PanierComponent } from './pages/panier/panier.component';
 import { UpdatePanierComponent } from './pages/panier/update-panier/update-panier.component';
 import { CreatePanierComponent } from './pages/panier/create-panier/create-panier.component';
+import { FinanceursComponent } from './pages/financeurs/financeurs.component';
+import { CreateFinanceurComponent } from './pages/financeurs/create-financeur/create-financeur.component';
 
 export const routes: Routes = [
 
@@ -61,6 +63,10 @@ export const routes: Routes = [
 
       //page Mentions légales
     { path: 'mentionsLegales', component: MentionsLegalesComponent },
+
+      //pages financeurs
+    { path: 'financeurs', component: FinanceursComponent },
+    { path: 'créerFinanceurs', component: CreateFinanceurComponent },
 
       //pages du panel admin
     { path: 'listecompte', component: ListeCompteComponent },

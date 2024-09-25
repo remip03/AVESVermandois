@@ -1,1 +1,17 @@
-<p>financeurs works!</p>
+<section>
+
+    <div class="centre">
+        <h2>Liste des financeurs</h2>
+    </div>
+
+    <button routerLink="/créerFinanceurs">Ajouter un Financeur</button>
+
+    <div class="licarte">
+        <div *ngFor="let financeur of listeFinanceurs" class="colonne centre">
+            <img src="public/images/{{financeur.logoF}}" alt="logo financeur">
+            <a href="{{ financeur.linkF }}">Lien</a>
+            <button (click)="deleteFinanceur(financeur.id)">Supprimer</button>
+        </div>
+    </div>
+
+</section>

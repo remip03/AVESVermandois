@@ -5,7 +5,7 @@
 
     <form [formGroup]="newPanier" (ngSubmit)="createPanier()" class="container colonne centre">
 
-        <div class="colonne marge">
+        <div class="colonne marge centre">
             <label for="nomPa">Entrer le nom du panier :</label>
             <input id="nomPa" name="nomPa" type="text" size="50" placeholder="NOM" formControlName="nomPa">
             @if (valid && form['nomPa'].invalid) {
@@ -13,13 +13,15 @@
                 }
         </div>
 
-        <div class="colonne marge">
+        <div class="colonne marge centre">
             <label for="prixPa">Entrer le nom du panier :</label>
             <input id="prixPa" name="prixPa" type="text" size="50" placeholder="PRIX" formControlName="prixPa">
             @if (valid && form['prixPa'].invalid) {
                 <span>Nom invalide</span>
                 }
         </div>
+
+        <button type="submit">Créer ce panier</button>
 
     </form>
 

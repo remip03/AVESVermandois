@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+
+  /* classes de positionnement */
+.ligne{
+    display: flex;
+    flex-direction: row;
+}
+
+.colonne{
+    display: flex;
+    flex-direction: column;
+}
+
+.centre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espace{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ecarte{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.licarte{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+  /* classes de couleurs */
+.orange{
+    color: black;
+    background-color: #f39e26;
+}
+
+.vert{
+    color: black;
+    background-color: #a6c33b;
+}
+
+.bleu{
+    color: black;
+    background-color: #009fb2;
+}
+
+.degrade{
+    background: linear-gradient(#009fb2, #a6c33b, #f39e26);
+}
+
+  /* réglages footer */
+footer{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body{
+    margin: none;
+    padding: none;
+}
+
+  /* style de base des boutons */
+button{
+    width: 30%;
+    height: 2rem;
+    font-size: 1.2rem;
+    background-color: #009fb2;
+    color: white;
+    border-radius: 1rem;
+    border: solid 1px black;
+    margin: 1%;
+}

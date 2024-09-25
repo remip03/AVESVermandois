@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PanierService } from '../../../services/panier.service';
 import panier from '../../../models/panier.model';
+import { FeLService } from '../../../services/fe-l.service';
+import FeL from '../../../models/FeL.model';
 
 @Component({
   selector: 'app-update-panier',
@@ -17,16 +19,19 @@ export class UpdatePanierComponent implements OnInit {
   valid: boolean = false;
   detailPanier: FormGroup;
   panierId!: number;
+  listeFeLs: FeL[] = [];
 
   constructor(
     private panierService: PanierService,
+    private FeLService: FeLService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router
   ) { 
     this.detailPanier = this.fb.group({
       nomPa: ['', Validators.required],
-      prixPa: ['', Validators.required]
+      prixPa: ['', Validators.required],
+      FeLs: [[]]
     })
    }
 
@@ -65,7 +70,10 @@ export class UpdatePanierComponent implements OnInit {
      if(this.panierId){
       this.panierService.getpanier(this.panierId).subscribe(
         (data: panier) => this.detailPanier.patchValue({...data})
-      );
+      )
+      this.FeLService.getFeLs().subscribe((res) => {
+        this.listeFeLs = res}
+      )
      }
    }
 
